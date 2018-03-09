@@ -34,4 +34,14 @@ export class ListPage {
       item: item
     });
   }
+
+  getItems(ev) {
+    // Reset items back to all of the items
+    // this.initializeItems();
+
+    // set val to the value of the ev target
+    let val = ev.target.value;
+    console.log(val);
+  }
+
 }
