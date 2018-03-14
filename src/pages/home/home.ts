@@ -12,18 +12,20 @@ export class HomePage {
 
   }
 
-  public event = {
-    month: '1990-02-19',
-    timeStarts: '07:43',
-    timeEnds: '1990-02-20'
+  public contact = {
+    email: ''
   };
 
-  warmth: number = 1300;
+  saveEmail() {
+    console.log('saved', this.contact.email);
+
+    this.presentLoading();
+  }
 
   presentLoading() {
     this.loadingCtrl.create({
-      content: 'Please wait...',
-      duration: 3000,
+      content: `Please wait... ${this.contact.email}`,
+      duration: 2000,
       dismissOnPageChange: true
     }).present();
   }
