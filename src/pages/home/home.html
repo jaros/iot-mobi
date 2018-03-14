@@ -8,15 +8,16 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
+  <form [formGroup]="contact" (ngSubmit)="saveEmail()">
     <ion-item>
+      <ion-icon name="contact" item-start></ion-icon>
       <ion-label floating>Email</ion-label>
-      <ion-input type="email" [(ngModel)]="contact.email" ></ion-input>
+      <ion-input type="email" formControlName="email"></ion-input>
     </ion-item>
     <ion-item>
-      <button ion-button (click)='saveEmail()' block>Subscribe</button>
+      <button ion-button type="submit" block>Subscribe</button>
     </ion-item>
-  </ion-list>
+  </form>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <!--<button ion-button secondary menuToggle>Toggle Menu</button>-->
 </ion-content>
