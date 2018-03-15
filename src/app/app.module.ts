@@ -9,7 +9,8 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HTTP } from '@ionic-native/http';
+import { HttpClientModule } from '@angular/common/http';
+import { ClientSubscribeServiceProvider } from '../providers/client-subscribe-service/client-subscribe-service';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HTTP } from '@ionic-native/http';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -30,8 +32,8 @@ import { HTTP } from '@ionic-native/http';
   providers: [
     StatusBar,
     SplashScreen,
-    HTTP,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ClientSubscribeServiceProvider
   ]
 })
 export class AppModule {}
